@@ -24,13 +24,13 @@ const events = [
 
 export default function Timeline() {
   return (
-    <section id="timeline" className="py-20 max-w-4xl mx-auto w-full">
-      <div className="text-center mb-16">
+    <section id="timeline" className="mx-auto py-20 w-full max-w-4xl">
+      <div className="mb-16 text-center">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-3xl md:text-4xl font-bold mb-4"
+          className="mb-4 font-bold text-3xl md:text-4xl"
         >
           My Journey
         </motion.h2>
@@ -38,7 +38,7 @@ export default function Timeline() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-slate-400 max-w-2xl mx-auto"
+          className="mx-auto max-w-2xl text-slate-400"
         >
           Key milestones in my professional development
         </motion.p>
@@ -46,31 +46,31 @@ export default function Timeline() {
 
       <div className="relative">
         {/* Timeline Line */}
-        <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500"></div>
+        <div className="top-0 bottom-0 left-8 absolute bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 w-0.5"></div>
         
         <div className="space-y-12">
           {events.map((event, index) => (
             <motion.div
-              key={event.year}
+              key={index}
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
               className="relative flex items-start gap-8"
             >
               {/* Timeline Dot */}
-              <div className="relative z-10 flex items-center justify-center w-16 h-16 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full">
+              <div className="z-10 relative flex justify-center items-center bg-white/10 backdrop-blur-sm border border-white/20 rounded-full w-16 h-16">
                 <span className="text-2xl">{event.icon}</span>
               </div>
               
               {/* Content */}
               <div className="flex-1 pb-8">
-                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/8 transition-all duration-300">
+                <div className="bg-white/5 hover:bg-white/8 backdrop-blur-sm p-6 border border-white/10 rounded-2xl transition-all duration-300">
                   <div className="flex items-center gap-4 mb-3">
-                    <span className="px-3 py-1 bg-gradient-to-r from-blue-500 to-purple-600 text-white text-sm font-semibold rounded-full">
+                    <span className="bg-gradient-to-r from-blue-500 to-purple-600 px-3 py-1 rounded-full font-semibold text-white text-sm">
                       {event.year}
                     </span>
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-3">{event.title}</h3>
+                  <h3 className="mb-3 font-bold text-white text-xl">{event.title}</h3>
                   <p className="text-slate-300 leading-relaxed">{event.desc}</p>
                 </div>
               </div>

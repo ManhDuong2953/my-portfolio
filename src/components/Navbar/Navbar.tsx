@@ -1,8 +1,6 @@
 "use client";
 import { useState } from "react";
-import Link from "next/link";
 import { motion } from "motion/react";
-import BlurText from "@/components/BlurText/BlurText";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,23 +10,15 @@ export default function Navbar() {
     { href: "#services", label: "Services" },
     { href: "#projects", label: "Projects" },
     { href: "#skills", label: "Skills" },
-    { href: "#contact", label: "Contact" }
+    { href: "#contact", label: "Contact" },
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-30 transition-all duration-300 py-4`}>
-      <div className={`absolute inset-0 transition-all duration-300 ${ "bg-black/90 backdrop-blur-lg border-b border-white/10"
-        }`} />
-
-      <div className="z-10 relative mx-auto px-6 max-w-6xl">
-        <div className="flex justify-between items-center">
-          <Link
-            href="/"
-            className="bg-clip-text bg-gradient-to-r from-white to-white/80 hover:to-sky-400 font-bold text-black dark:text-white text-xl transition-all duration-300"
-          >
-            <BlurText text="Duong Van Manhpreet." animateBy="letters" delay={30} direction="top" />
-          </Link>
-
+    <nav
+      className={`fixed top-0 left-0 right-0 z-30 transition-all duration-300 py-4`}
+    >
+      <div className="z-10 relative flex justify-between items-center mx-auto max-w-6xl">
+        <div className="flex justify-between items-center bg-black shadow-lg mx-auto px-6 py-3 border border-white/20 rounded-2xl">
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
@@ -49,12 +39,21 @@ export default function Navbar() {
             className="md:hidden relative flex flex-col justify-center items-center bg-white/10 hover:bg-white/20 rounded-lg w-8 h-8 transition-all duration-300"
             aria-label="Toggle mobile menu"
           >
-            <span className={`w-5 h-0.5 bg-white transition-all duration-300 ${isOpen ? "rotate-45 translate-y-0" : "-translate-y-1.5"
-              }`} />
-            <span className={`w-5 h-0.5 bg-white transition-all duration-300 ${isOpen ? "opacity-0" : "opacity-100"
-              }`} />
-            <span className={`w-5 h-0.5 bg-white transition-all duration-300 ${isOpen ? "-rotate-45 translate-y-0" : "translate-y-1.5"
-              }`} />
+            <span
+              className={`w-5 h-0.5 bg-white transition-all duration-300 ${
+                isOpen ? "rotate-45 translate-y-0" : "-translate-y-1.5"
+              }`}
+            />
+            <span
+              className={`w-5 h-0.5 bg-white transition-all duration-300 ${
+                isOpen ? "opacity-0" : "opacity-100"
+              }`}
+            />
+            <span
+              className={`w-5 h-0.5 bg-white transition-all duration-300 ${
+                isOpen ? "-rotate-45 translate-y-0" : "translate-y-1.5"
+              }`}
+            />
           </button>
         </div>
 

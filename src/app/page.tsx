@@ -15,25 +15,24 @@ import ProjectShowcase from "@/components/ProjectShowcase/ProjectShowcase";
 import FeaturedWork from "@/components/FeaturedWork/FeaturedWork";
 import Contact from "@/components/Contact/Contact";
 import Footer from "@/components/Footer/Footer";
-import ProfileCard from "@/components/Components/ProfileCard/ProfileCard";
 import SplashCursor from "@/components/Animations/SplashCursor/SplashCursor";
 import Lanyard from "@/components/Components/Lanyard/Lanyard";
+import LightRays from "@/components/Backgrounds/LightRays/LightRays";
+import ScrollToRead from "@/components/ScrollToRead/ScrollToRead";
 
 export default function Home() {
   return (
     <div className="relative bg-black w-full min-h-screen overflow-hidden text-white">
       {/* Progress & Navigation */}
-      <SplashCursor />
-      <Lanyard position={[0, 0, 20]} gravity={[0, -40, 0]} />
 
       <BackToTop />
       {/* Background Elements */}
-      <div className="absolute inset-0 w-full h-full">
+      <div className="top-0 absolute inset-0 w-full h-screen">
         <Squares
-          speed={0.5}
-          squareSize={80}
+          speed={0.4}
+          squareSize={50}
           direction="diagonal"
-          borderColor="#ffffff22"
+          borderColor="rgba(255, 255, 255, 0.3)"
           hoverFillColor="#222"
         />
       </div>
@@ -43,23 +42,16 @@ export default function Home() {
       <Navbar />
 
       {/* Main Content */}
-      <main className="z-10 relative flex flex-col justify-start items-center space-y-32 px-6 pt-24 min-h-screen">
+      <main className="z-10 relative flex flex-col justify-start items-center space-y-[60px] px-6 pt-[60px] min-h-screen">
         {/* Hero Section */}
         <div className="flex items-center">
-          <Hero />
-
-          <ProfileCard
-            name="Javi A. Torres"
-            title="Software Engineer"
-            handle="javicodes"
-            status="Online"
-            contactText="Contact Me"
-            avatarUrl="https://png.pngtree.com/png-clipart/20250501/original/pngtree-the-pretty-girl-png-image_20924751.png"
-            showUserInfo={true}
-            enableTilt={true}
-            enableMobileTilt={false}
-            onContactClick={() => console.log("Contact clicked")}
-          />
+          <div className="flex-1">
+            <Hero />
+          </div>
+          <div className="z-1000 flex-1 self-start h-[70vh]">
+            <Lanyard />
+          </div>
+          <ScrollToRead />
         </div>
         {/* About Section */}
         <About />
@@ -67,6 +59,7 @@ export default function Home() {
         {/* Services Section */}
         <Services />
 
+        <SplashCursor />
         {/* Stats Section */}
         <Stats />
 
@@ -84,9 +77,10 @@ export default function Home() {
 
         {/* Featured Work Section */}
         <FeaturedWork />
-
         {/* Contact Section */}
-        <Contact />
+        <div className="mx-auto py-20 w-full h-screen">
+          <Contact />
+        </div>
 
         {/* <ScrollProgress /> */}
       </main>

@@ -1,40 +1,17 @@
 "use client";
 import { motion } from "motion/react";
-import { useState, useEffect } from "react";
 import BlurText from "@/components/BlurText/BlurText";
-import Squares from "@/components/Backgrounds/Squares/Squares";
+import TextType from "../TextAnimations/TextType/TextType";
 
 const roles = [
-  "Full Stack Developer",
-  "React Specialist",
+  "Backend Developer",
   "Mobile App Developer",
-  "Game Developer",
-  "AI/ML Engineer"
+  "Frontend Developer",
 ];
 
 export default function Hero() {
-  const [currentRole, setCurrentRole] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentRole((prev) => (prev + 1) % roles.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <header className="relative flex justify-center items-center h-[calc(100vh-60px)] overflow-hidden">
-      {/* Background Elements */}
-      <div className="z-0 absolute inset-0 opacity-20">
-        {/* <Squares
-          direction="diagonal"
-          speed={0.5}
-          squareSize={32}
-          borderColor="rgba(255,255,255,0.2)"
-          hoverFillColor="rgba(255,255,255,0.1)"
-        /> */}
-      </div>
-
       {/* Floating Gradient Orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -64,7 +41,7 @@ export default function Hero() {
       </div>
 
       {/* Main Content */}
-      <div className="z-10 relative flex flex-col items-center mx-auto px-6 max-w-5xl text-center">
+      <div className="z-10 relative flex flex-col items-start mx-auto px-6 max-w-5xl text-start">
         {/* Greeting */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -84,14 +61,14 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="bg-clip-text bg-gradient-to-r from-white via-blue-200 to-purple-200 text-white"
+            className="bg-clip-text bg-gradient-to-r from-white via-blue-400 to-purple-600 text-[aqua]"
           >
             <BlurText
               text="Hi, I'm Duong Van Manh"
               animateBy="words"
               delay={100}
               direction="top"
-              className="block mb-4"
+              className="block mb-4 text-2xl"
             />
           </motion.div>
 
@@ -99,18 +76,15 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 text-transparent text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <motion.span
-              key={currentRole}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.5 }}
-            >
-              {roles[currentRole]}
-            </motion.span>
+            <TextType
+              text={roles}
+              typingSpeed={75}
+              pauseDuration={1500}
+              showCursor={true}
+              cursorCharacter="|"
+            />
           </motion.div>
         </h1>
 
@@ -121,9 +95,10 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="mb-12 max-w-3xl text-slate-300 text-lg md:text-xl leading-relaxed"
         >
-          I craft exceptional digital experiences using modern technologies like React, Next.js, and TypeScript.
-          From web applications to mobile apps, games, and AI-powered solutions — I bring ideas to life with
-          clean code and beautiful design.
+          I craft exceptional digital experiences using modern technologies like
+          React, Next.js, and TypeScript. From web applications to mobile apps,
+          games, and AI-powered solutions — I bring ideas to life with clean
+          code and beautiful design.
         </motion.p>
 
         {/* Action Buttons */}
@@ -141,8 +116,18 @@ export default function Hero() {
           >
             <span className="z-10 relative flex justify-center items-center gap-2">
               View My Work
-              <svg className="w-4 sm:w-5 h-4 sm:h-5 transition-transform group-hover:translate-x-1 duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              <svg
+                className="w-4 sm:w-5 h-4 sm:h-5 transition-transform group-hover:translate-x-1 duration-300"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
               </svg>
             </span>
           </motion.a>
@@ -157,26 +142,8 @@ export default function Hero() {
           </motion.a>
         </motion.div>
 
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1.4 }}
-          className="bottom-2 left-1/2 absolute -translate-x-1/2 transform"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="flex flex-col items-center gap-2 text-slate-400 hover:text-white transition-colors duration-300 cursor-pointer"
-            onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
-          >
-            <span className="font-medium text-sm">Scroll to explore</span>
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
-          </motion.div>
-        </motion.div>
       </div>
+  
     </header>
   );
 }
