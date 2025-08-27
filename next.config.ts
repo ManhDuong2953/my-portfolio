@@ -2,6 +2,7 @@
 const nextConfig = {
   experimental: {
     optimizeCss: false, // disable lightningcss
+    appDir: true, // cho phép dùng src/app
   },
   typescript: {
     // ⚡ Bỏ chặn lỗi type làm fail build
