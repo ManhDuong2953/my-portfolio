@@ -20,20 +20,14 @@ export default function ScrollToRead() {
               ?.scrollIntoView({ behavior: "smooth" })
           }
         >
-          <span className="font-medium text-sm">Scroll to explore</span>
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M19 14l-7 7m0 0l-7-7m7 7V3"
-            />
-          </svg>
+          <span className="font-medium text-[10px]">Scroll to explore</span>
+          <div className="scrolldown-wrapper">
+            <div className="scrolldown">
+              <svg height="50" width="50">
+                <circle className="scrolldown-p1" cx="8" cy="15" r="2" />
+              </svg>
+            </div>
+          </div>
         </motion.div>
       </motion.div>
     </>

@@ -41,7 +41,7 @@ const interests = [
 
 export default function About() {
   return (
-    <section id="about" className="mx-auto py-20 w-full max-w-6xl">
+    <section id="about" className="mx-auto w-full max-w-6xl">
       <div className="mb-16 text-center">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}

@@ -28,7 +28,7 @@ useTexture.preload(
 
 export default function Lanyard() {
   return (
-    <Canvas camera={{ position: [0, 0, 20], fov: 10 }}>
+    <Canvas camera={{ position: [0, 0, 40], fov: 10 }}>
       <ambientLight intensity={Math.PI} />
       <Physics interpolate gravity={[0, -40, 0]} timeStep={1 / 60}>
         <Band />

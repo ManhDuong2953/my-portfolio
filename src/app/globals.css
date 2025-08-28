@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+@import "tailwindcss";
 
 :root {
   --background: #0a0a0a;
@@ -60,4 +61,53 @@ body {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+
+/* Scroll Down */
+
+.scrolldown-wrapper {
+  left: 50%;
+  position: absolute;
+  text-align: center;
+  bottom: 0;
+  transform: translate(-50%, -50%);
+}
+
+.scrolldown {
+  border: 2px solid #FFFFFF;
+  border-radius: 30px;
+  height: 30px;
+  margin: 0 auto 8px;
+  text-align: center;
+  width: 20px;
+}
+
+.scrolldown-p1,
+.scrolldown-p2 {
+  animation-duration: 1.5s;
+  animation-name: scrolldown;
+  animation-iteration-count: infinite;
+  fill: #FFFFFF;
+}
+
+.scrolldown-p2 {
+  animation-delay: 1s;
+}
+
+@keyframes scrolldown {
+  0% {
+    opacity: 0;
+    transform: translate(0, -8px);
+  }
+  
+  50% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  
+  100% {
+    opacity: 0;
+    transform: translate(0, 8px);
+  }
 }
