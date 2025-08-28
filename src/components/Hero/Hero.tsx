@@ -95,10 +95,9 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="mb-12 max-w-3xl text-slate-300 text-lg md:text-xl leading-relaxed"
         >
-          I craft exceptional digital experiences using modern technologies like
-          React, Next.js, and TypeScript. From web applications to mobile apps,
-          games, and AI-powered solutions — I bring ideas to life with clean
-          code and beautiful design.
+          I’m a Fullstack Developer experienced in Nuxt.js, Node.js, and various
+          frameworks and libraries, also building cross-platform mobile apps
+          with Flutter, with a focus on performance and user experience.
         </motion.p>
 
         {/* Action Buttons */}
@@ -141,9 +140,7 @@ export default function Hero() {
             Get In Touch
           </motion.a>
         </motion.div>
-
       </div>
-  
     </header>
   );
 }

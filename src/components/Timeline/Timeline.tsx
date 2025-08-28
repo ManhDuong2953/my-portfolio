@@ -3,22 +3,22 @@ import { motion } from "motion/react";
 
 const events = [
   { 
-    year: "2025", 
-    title: "Software DevelopmentIntern at Lafleurtech", 
-    desc: "Built a self-service data integration platform allowing clients to seamlessly incorporate custom datasets into RAG systems.",
-    icon: "💼"
+    year: "2020", 
+    title: "Self-learning HTML, CSS & JavaScript", 
+    desc: "Started my programming journey by learning the fundamentals of web development at home.", 
+    icon: "📚"
   },
   { 
-    year: "2025", 
-    title: "Flutter Developer Intern at Celebrare", 
-    desc: "Collaborated with various teams to develop the iOS app for Celebrare, which is their main application, as well as WowInvite, their newest offering.",
-    icon: "🚀"
-  },
-  { 
-    year: "2021-2025", 
-    title: "Graduated Computer Science and Engineering", 
-    desc: "Bachelor's degree in Computer Science and Engineering from Chandigarh College of Engineering and Technology. Specialized in web development and software engineering.",
+    year: "2021 - 2025", 
+    title: "Undergraduate Student at Hanoi University of Mining and Geology", 
+    desc: "Pursuing a Bachelor's degree while expanding skills in React, Node.js, PHP, C/C++, Python, Java, and Dart/Flutter.", 
     icon: "🎓"
+  },
+  { 
+    year: "2024 - Present", 
+    title: "Frontend Developer at NekSolution Co., Ltd.", 
+    desc: "Working with Vue 2/3 and Nuxt 2/3 to build modern, scalable frontend applications while collaborating with backend teams.", 
+    icon: "💼"
   },
 ];
 
@@ -40,7 +40,7 @@ export default function Timeline() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="mx-auto max-w-2xl text-slate-400"
         >
-          Key milestones in my professional development
+          Key milestones in my learning and professional development
         </motion.p>
       </div>
 
