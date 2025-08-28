@@ -59,7 +59,7 @@ export default function Home() {
       <Navbar />
 
       {/* Main Content */}
-      <main className="z-10 relative flex flex-col justify-start items-center space-y-[60px] pt-[60px] min-h-screen">
+      <main className="z-10 relative flex flex-col justify-start items-center space-y-[60px] min-h-screen">
         {/* Hero Section */}
         <div className="relative flex items-center w-screen">
           <div className="flex-1 px-6 w-full">
