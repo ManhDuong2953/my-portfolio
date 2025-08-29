@@ -24,7 +24,7 @@ export default function Home() {
   return (
     <>
     <BackToTop />
-      <div className="relative bg-black bg-opacity-10 w-full h-full min-h-screen overflow-hidden text-white">
+      <div className="relative bg-[#040209] bg-opacity-100 w-full h-full min-h-screen overflow-hidden text-white">
         {/* Global Backgrounds */}
         <div className="z-1 absolute inset-0">
           {/* Squares làm nền chung */}

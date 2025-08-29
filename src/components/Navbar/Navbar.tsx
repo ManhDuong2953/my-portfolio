@@ -15,10 +15,10 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-30 transition-all duration-300 py-4`}
+      className={`fixed top-0 left-0 right-0 z-30 transition-all duration-300 py-4 `}
     >
       <div className="z-10 relative flex justify-between items-center mx-auto max-w-6xl">
-        <div className="flex justify-between items-center bg-black shadow-lg mx-auto px-6 py-3 border border-white/20 rounded-2xl">
+        <div className="flex justify-between items-center bg-black mx-auto px-6 py-3 border border-white/20 rounded-2xl ring-cyan-500/50">
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (

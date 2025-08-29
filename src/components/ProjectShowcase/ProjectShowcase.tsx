@@ -10,7 +10,7 @@ interface Project {
   longDescription: string;
   category: string;
   tags: string[];
-  image: string;
+  images: string[]; // ✅ thay vì 1 ảnh thì là mảng ảnh
   liveUrl?: string;
   githubUrl?: string;
   featured: boolean;
@@ -19,123 +19,177 @@ interface Project {
 const projects: Project[] = [
   {
     id: "1",
-    title: "FileEx",
-    description: "A modern, feature-rich file explorer built with Tauri, React, TypeScript, and shadcn/ui.",
-    longDescription: "FileEx provides a clean, intuitive interface for managing files and folders with advanced features and beautiful UI components.",
-    category: "Desktop Development",
-    tags: ["rust", "typescript", "tauri", "tailwindcss", "vite", "shadcnui"],
-    image: "/projects/fileex.png",
-    liveUrl: "https://github.com/Duong Van Manhbig/fileEx/releases/",
-    githubUrl: "https://github.com/Duong Van Manhbig/fileEx",
-    featured: true
+    title: "Zing MP3 Clone",
+    description: "A music streaming app clone built with PHP and Cloudinary.",
+    longDescription:
+      "This project showcases a clone of the Zing MP3 music streaming app, utilizing PHP for the backend and Cloudinary for media storage.",
+    category: "Web Development",
+    tags: ["PHP", "Cloudinary", "Music Streaming"],
+    images: [
+      "/projects/zingmp3_1.png",
+      "/projects/zingmp3_2.png",
+      "/projects/zingmp3_3.png",
+      "/projects/zingmp3_4.png",
+      "/projects/zingmp3_5.png",
+    ],
+    githubUrl: "https://github.com/ManhDuong2953/zingmp3.git",
+    featured: true,
   },
   {
     id: "2",
-    title: "Backtool",
-    description: "A CLI tool to generate backend structures for Node.js applications with support for multiple databases and a visually appealing user interface.",
-    longDescription: "BackTool simplifies the process of setting up a Node.js backend by generating a complete project structure, including a server entry point, models, database configuration, controllers, routes, middleware, and a customized package.json. It supports MongoDB, PostgreSQL, MySQL, and SQLite, allowing developers to quickly scaffold a backend tailored to their preferred database.",
-    category: "Web Development",
-    tags: ["chalk", "Inquirer", "Figlet", "commander"],
-    image: "/projects/backtool.png",
-    liveUrl: "https://www.npmjs.com/package/backtool",
-    githubUrl: "https://github.com/Duong Van Manhbig/backTool",
-    featured: true
+    title: "Mobile Food App",
+    description: "A modern food delivery app built with Flutter.",
+    longDescription:
+      "This mobile app showcases the capabilities of Flutter, providing a clean and intuitive interface for users. Restful API with Nodejs",
+    category: "Mobile Development",
+    tags: ["Flutter", "Dart", "Nodejs", "MySQL"],
+    images: [
+      "/projects/foodapp_0.webp",
+      "/projects/foodapp_1.png",
+      "/projects/foodapp_2.png",
+      "/projects/foodapp_3.png",
+      "/projects/foodapp_4.png",
+      "/projects/foodapp_5.png",
+      "/projects/foodapp_6.png",
+      "/projects/foodapp_7.png",
+    ],
+    githubUrl: "https://github.com/ManhDuong2953/FoodApp.git",
+    featured: true,
   },
   {
-    id: "3", 
-    title: "Persona AI",
-    description: "A full-stack web application that predicts personality type (introvert, extrovert, or ambivert) using AI/ML models.",
-    longDescription: "A full-stack web application that predicts personality type (introvert, extrovert, or ambivert) using AI/ML models. Built with Next.js (frontend) and Python FastAPI (backend).",
-    category: "AI & ML",
-    tags: ["Nextjs", "Typescript", "numpy", "scikit-learn", "Fastapi", "pandas"],
-    image: "/projects/Persona-AI.png",
-    liveUrl: "https://introver-extrovert.vercel.app/",
-    githubUrl: "https://github.com/Duong Van Manhbig/Introver-Extrovert",
-    featured: false
+    id: "3",
+    title: "Landingpage Dental",
+    description:
+      "A modern, feature-rich landing page built with VueJS, Tailwind CSS and AOS.",
+    longDescription:
+      "This landing page showcases the capabilities of the Dental, providing a clean and intuitive interface for users.",
+    category: "Web Development",
+    tags: ["VueJS", "TailwindCSS", "AOS"],
+    images: ["/projects/landingpage-dental.png"],
+    liveUrl: "https://manhduong2953.github.io/landingpage-dental/",
+    githubUrl: "https://github.com/ManhDuong2953/landingpage-dental.git",
+    featured: false,
   },
   {
     id: "4",
-    title: "Satellite AI",
-    description: "A modern web application that uses AI to classify different types of areas from satellite images.",
-    longDescription: "A modern web application that uses AI to classify different types of areas from satellite images. The application can identify various terrains like deserts, plains, and other landscapes from satellite imagery.",
-    category: "AI & ML",
-    tags: ["Nextjs", "Tensorflow", "Numpy", "CNN","Fastapi", "Pandas"],
-    image: "/projects/satellite-ai.png",
-    liveUrl: "https://satellite-ai-three.vercel.app/",
-    githubUrl: "https://github.com/Duong Van Manhbig/Satellite-AI",
-    featured: false
+    title: "Landingpage Furniture",
+    description:
+      "A modern, feature-rich landing page built with VueJS, Tailwind CSS and AOS",
+    longDescription:
+      "This landing page showcases the capabilities of Furniture, providing a clean and intuitive interface for users.",
+    category: "Web Development",
+    tags: ["VueJS", "TailwindCSS", "AOS"],
+    images: ["/projects/landingpage-furniture.png"],
+    liveUrl: "https://landingpage-furniture.vercel.app/",
+    githubUrl: "https://github.com/ManhDuong2953/landingpage-furniture.git",
+    featured: false,
   },
   {
     id: "5",
-    title: "TomatoGuard AI",
-    description: "TomatoGuard AI is a comprehensive web application that uses Convolutional Neural Networks (CNN) to detect diseases in tomato plants.",
-    longDescription: "TomatoGuard AI is a comprehensive web application that uses Convolutional Neural Networks (CNN) to detect diseases in tomato plants. The system provides real-time analysis, detailed disease information, and research insights.",
-    category: "AI & ML",
-    tags: ["Nextjs", "Tensorflow", "Numpy", "CNN","Fastapi", "Pandas"],
-    image: "/projects/tomato-guard-ai.png",
-    liveUrl: "https://cnn-based-tomato-disease-prediction.vercel.app/",
-    githubUrl: "https://github.com/Duong Van Manhbig/CNN-based-Tomato-disease-prediction",
-    featured: true
+    title: "Landingpage AI Go SaaS",
+    description:
+      "Developed a modern, feature-rich landing page built with VueJS, Tailwind CSS and AOS.",
+    longDescription:
+      "This landing page showcases the capabilities of AI, providing a clean and intuitive interface for users.",
+    category: "Web Development",
+    tags: ["VueJS", "TailwindCSS", "AOS"],
+    images: ["/projects/landingpage-ai.png"],
+    liveUrl: "https://landingpage-ai-go-sass.vercel.app/",
+    githubUrl: "https://github.com/ManhDuong2953/landingpage-ai-go-sass.git",
+    featured: false,
   },
   {
     id: "6",
-    title: "Crop Recommendation System",
-    description: "A comprehensive machine learning-powered web application that provides intelligent crop recommendations based on soil and environmental parameters.",
-    longDescription: "A comprehensive machine learning-powered web application that provides intelligent crop recommendations based on soil and environmental parameters.The system helps farmers and agricultural professionals make informed decisions about crop selection to optimize yield and sustainability.",
-    category: "AI & ML",
-    tags: ["Nextjs", "Tensorflow", "Numpy", "CNN","Fastapi", "Pandas"],
-    image: "/projects/crop-ai.png",
-    liveUrl: "https://crop-recommendation-system-iota.vercel.app/",
-    githubUrl: "https://github.com/Duong Van Manhbig/crop-recommendation-system",
-    featured: true
+    title: "Landingpage Course",
+    description:
+      "A modern, feature-rich landing page built with VueJS, Tailwind CSS and AOS.",
+    longDescription:
+      "This landing page showcases the capabilities of the Course, providing a clean and intuitive interface for users.",
+    category: "Web Development",
+    tags: ["VueJS", "TailwindCSS", "AOS"],
+    images: ["/projects/landingpage-course.png"],
+    liveUrl: "https://landingpage-courses-2.vercel.app/",
+    githubUrl: "https://github.com/ManhDuong2953/landingpage-courses-2.git",
+    featured: false,
   },
   {
     id: "7",
-    title: "Gem AI",
-    description: "Gem AI App is a versatile application that allows users to generate various types of creative content, including songs, stories, and paragraphs.",
-    longDescription: "Gem AI App is a versatile application that allows users to generate various types of creative content, including songs, stories, and paragraphs. It also features a dynamic conversation module with an AI model, as well as built-in connectivity checks.",
-    category: "Mobile Development",
-    tags: ["dart", "firebase", "chatbot", "flutter", "story-generator", "gemini-api", "lyrics-generator"],
-    image: "/projects/dashboard.jpg",
-    liveUrl: "https://github.com/Duong Van Manhbig/Gemini_app",
-    githubUrl: "https://github.com/Duong Van Manhbig/Gemini_app",
-    featured: false
-  }
+    title: "Landingpage TheMarch88",
+    description:
+      "A modern, feature-rich landing page built with VueJS, Tailwind CSS and GSAP Scroll Trigger.",
+    longDescription:
+      "This landing page showcases the capabilities of TheMarch88, providing a clean and intuitive interface for users.",
+    category: "Web Development",
+    tags: ["VueJS", "TailwindCSS", "GSAP"],
+    images: ["/projects/landingpage-themarch88.png"],
+    liveUrl: "https://landingpage-lac-tau.vercel.app/",
+    githubUrl: "https://github.com/ManhDuong2953/demo.git",
+    featured: false,
+  },
+  {
+    id: "8",
+    title: "Landingpage Xiaomi 15",
+    description:
+      "A modern, feature-rich landing page built with VueJS, Tailwind CSS and GSAP Scroll Trigger.",
+    longDescription:
+      "This landing page showcases the capabilities of the Xiaomi 15, providing a clean and intuitive interface for users.",
+    category: "Web Development",
+    tags: ["GSAP ScrollTrigger/ScrollSmoother"],
+    images: ["/projects/xiaomi-15.png"],
+    liveUrl: "https://manhduong2953.github.io/GSAP_SCROLL_FRAME/",
+    githubUrl: "https://github.com/ManhDuong2953/GSAP_SCROLL_FRAME.git",
+    featured: false,
+  },
+  {
+    id: "9",
+    title: "Mephim Web App",
+    description: "A modern web application built with React and TMDB API.",
+    longDescription:
+      "This web application showcases the capabilities of Mephim, providing a clean and intuitive interface for users.",
+    category: "Web Development",
+    tags: ["React", "TMDB"],
+    images: ["/projects/mephim-web-app.png"],
+    liveUrl: "https://manhduong2953.github.io/mephim/",
+    githubUrl: "https://github.com/ManhDuong2953/mephim.git",
+    featured: false,
+  },
 ];
 
-const categories = ["All", "Web Development", "Mobile Development", "Game Development", "AI & ML", "Desktop Development"];
+const categories = ["All", "Web Development", "Mobile Development"];
 
 export default function ProjectShowcase() {
   const [activeCategory, setActiveCategory] = useState("All");
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-  const filteredProjects = activeCategory === "All" 
-    ? projects 
-    : projects.filter(project => project.category === activeCategory);
+  const filteredProjects =
+    activeCategory === "All"
+      ? projects
+      : projects.filter((project) => project.category === activeCategory);
 
   return (
     <section id="projects" className="mx-auto py-20 w-full max-w-6xl">
       <div className="mb-16 text-center">
-        <motion.h2 
+        <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="mb-4 font-bold text-3xl md:text-4xl"
         >
-          Featured Projects
+          Personal Learning Projects
         </motion.h2>
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
           className="mx-auto max-w-2xl text-slate-400"
         >
-          A showcase of my recent work across different technologies and platforms
+          A collection of personal projects I built during my learning journey,
+          exploring various technologies and improving my development skills.
         </motion.p>
       </div>
 
       {/* Category Filter */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
@@ -157,7 +211,7 @@ export default function ProjectShowcase() {
       </motion.div>
 
       {/* Projects Grid */}
-      <motion.div 
+      <motion.div
         layout
         className="gap-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
       >
@@ -178,12 +232,12 @@ export default function ProjectShowcase() {
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300" />
                 <div className="absolute inset-0 flex justify-center items-center">
                   <div className="opacity-50 group-hover:opacity-70 text-6xl transition-opacity duration-300">
-                    {/* {project.category === "Web Development" && "🌐"} */}
-                    {/* {project.category === "AI & ML" && "🤖"} */}
-                    {/* {project.category === "Game Development" && "🎮"} */}
-                    {project.category === "Mobile Development" ? "📱" :
-                    <Image src={project.image} alt={project.title} fill className="object-cover"/>
-                    }
+                    <Image
+                      src={project.images[0]}
+                      alt={project.title}
+                      fill
+                      className="object-cover"
+                    />
                   </div>
                 </div>
                 {project.featured && (
@@ -201,7 +255,7 @@ export default function ProjectShowcase() {
                 <p className="mb-4 text-slate-400 line-clamp-2">
                   {project.description}
                 </p>
-                
+
                 {/* Tags */}
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.slice(0, 3).map((tag) => (
@@ -252,59 +306,98 @@ export default function ProjectShowcase() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="z-50 fixed inset-0 flex justify-center items-center bg-black/80 backdrop-blur-sm p-4"
+          className="z-50 fixed inset-0 flex justify-center items-center bg-black/60 backdrop-blur-md p-4"
           onClick={() => setSelectedProject(null)}
         >
           <motion.div
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
-            className="bg-black/90 border border-white/20 rounded-2xl w-full max-w-2xl max-h-[80vh] overflow-y-auto"
+            className="bg-gradient-to-br from-gray-800/90 via-gray-900/90 to-black/90 shadow-[0_0_30px_rgba(0,200,255,0.3)] border border-white/20 rounded-2xl w-full max-w-4xl max-h-[85vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="p-8">
+              {/* Header */}
               <div className="flex justify-between items-start mb-6">
-                <h3 className="font-bold text-white text-2xl">{selectedProject.title}</h3>
+                <h3 className="font-bold text-white text-2xl">
+                  {selectedProject.title}
+                </h3>
                 <button
                   onClick={() => setSelectedProject(null)}
-                  className="text-slate-400 hover:text-white transition-colors duration-300"
+                  className="bg-white/10 hover:bg-white/20 px-3 py-1 rounded-lg text-slate-300 hover:text-white transition-colors duration-300"
                 >
                   ✕
                 </button>
               </div>
-              
+
+              {/* Description */}
               <p className="mb-6 text-slate-300 leading-relaxed">
                 {selectedProject.longDescription}
               </p>
-              
+
+              {/* Tags */}
               <div className="flex flex-wrap gap-2 mb-6">
                 {selectedProject.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="bg-white/10 px-3 py-1 rounded-full text-slate-300 text-sm"
+                    className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 px-3 py-1 border border-white/10 rounded-full text-slate-200 text-sm"
                   >
                     {tag}
                   </span>
                 ))}
               </div>
 
-              <div className="flex gap-4">
+              {/* Action Buttons */}
+              <div className="flex gap-4 my-4">
                 {selectedProject.liveUrl && (
                   <a
                     href={selectedProject.liveUrl}
-                    className="bg-white/10 hover:bg-white/20 px-6 py-3 rounded-lg font-medium transition-colors duration-300"
+                    target="_blank"
+                    className="bg-blue-500/20 hover:bg-blue-500/30 px-6 py-3 border border-blue-400/30 rounded-lg font-medium text-white transition-colors duration-300"
                   >
-                    View Live Demo
+                    🌐 View Live Demo
                   </a>
                 )}
                 {selectedProject.githubUrl && (
                   <a
                     href={selectedProject.githubUrl}
-                    className="hover:bg-white/10 px-6 py-3 border border-white/20 rounded-lg font-medium transition-colors duration-300"
+                    target="_blank"
+                    className="bg-purple-500/20 hover:bg-purple-500/30 px-6 py-3 border border-purple-400/30 rounded-lg font-medium text-white transition-colors duration-300"
                   >
-                    View Code
+                    💻 View Code
                   </a>
                 )}
+              </div>
+
+              {/* Images */}
+              <div
+                className="gap-4 grid mb-6"
+                style={{
+                  gridTemplateColumns:
+                    selectedProject.category === "Mobile Development"
+                      ? "repeat(2, 1fr)"
+                      : "repeat(1, 1fr)",
+                }}
+              >
+                {selectedProject.images.map((img, idx) => (
+                  <div
+                    key={idx}
+                    className="relative shadow-md border border-white/10 rounded-lg w-full min-h-100 overflow-hidden"
+                    style={{
+                      aspectRatio:
+                        selectedProject.category === "Mobile Development"
+                          ? "9/16"
+                          : "16/9",
+                    }}
+                  >
+                    <Image
+                      src={img}
+                      alt={`${selectedProject.title} ${idx + 1}`}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                ))}
               </div>
             </div>
           </motion.div>
