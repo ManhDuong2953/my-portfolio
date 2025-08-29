@@ -22,111 +22,114 @@ import Orb from "@/components/Backgrounds/Orb/Orb";
 
 export default function Home() {
   return (
-    <div className="relative bg-black bg-opacity-10 w-full h-full min-h-screen overflow-hidden text-white">
-      {/* Global Backgrounds */}
-      <div className="absolute inset-0 z-1">
-        {/* Squares làm nền chung */}
-        <Squares
-          speed={0.4}
-          squareSize={50}
-          direction="diagonal"
-          borderColor="rgba(255, 255, 255, 0.2)"
-          hoverFillColor="#222"
-        />
-      </div>
-
-      {/* Cursor & Utilities */}
-      <SplashCursor />
-      <BackToTop />
-      {/* <FloatingElements /> */}
-
-      {/* Navigation */}
-      <Navbar />
-
-      {/* Main Content */}
-      <main className="z-10 relative flex flex-col justify-start items-center space-y-[60px] min-h-screen">
-        {/* Hero Section */}
-        <div className="relative flex items-center w-screen h-screen">
-          <div className="flex-1 px-6 w-full">
-            <div className="absolute inset-0 -z-10">
-=              <Squares
-                speed={0.4}
-                squareSize={50}
-                direction="diagonal"
-                borderColor="rgba(255, 255, 255, 0.2)"
-                hoverFillColor="#222"
-              />
-            </div>
-            {/* Light Rays */}
-            <div className="absolute inset-0 -z-1">
-              <LightRays
-                raysOrigin="top-center"
-                raysColor="#00ffff"
-                raysSpeed={1.7}
-                lightSpread={5}
-                rayLength={3}
-                followMouse={true}
-                mouseInfluence={0.5}
-                noiseAmount={0.1}
-                distortion={0.05}
-                className="custom-rays"
-              />
-            </div>
-            <Hero />
-            <ScrollToRead />
-          </div>
-          <div className="hidden z-1000 md:flex flex-1 self-start h-screen">
-            <Lanyard />
-          </div>
+    <>
+    <BackToTop />
+      <div className="relative bg-black bg-opacity-10 w-full h-full min-h-screen overflow-hidden text-white">
+        {/* Global Backgrounds */}
+        <div className="z-1 absolute inset-0">
+          {/* Squares làm nền chung */}
+          <Squares
+            speed={0.4}
+            squareSize={50}
+            direction="diagonal"
+            borderColor="rgba(255, 255, 255, 0.2)"
+            hoverFillColor="#222"
+          />
         </div>
 
-        {/* About Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <SpotlightCard
-            className="custom-spotlight-card"
-            spotlightColor="rgba(0, 229, 255, 0.2)"
+        {/* Cursor & Utilities */}
+        <SplashCursor />
+        {/* <FloatingElements /> */}
+
+        {/* Navigation */}
+        <Navbar />
+
+        {/* Main Content */}
+        <main className="z-10 relative flex flex-col justify-start items-center space-y-[60px] min-h-screen">
+          {/* Hero Section */}
+          <div className="relative flex items-center w-screen h-screen">
+            <div className="flex-1 px-6 w-full">
+              <div className="-z-10 absolute inset-0">
+                ={" "}
+                <Squares
+                  speed={0.4}
+                  squareSize={50}
+                  direction="diagonal"
+                  borderColor="rgba(255, 255, 255, 0.2)"
+                  hoverFillColor="#222"
+                />
+              </div>
+              {/* Light Rays */}
+              <div className="-z-1 absolute inset-0">
+                <LightRays
+                  raysOrigin="top-center"
+                  raysColor="#00ffff"
+                  raysSpeed={1.7}
+                  lightSpread={5}
+                  rayLength={3}
+                  followMouse={true}
+                  mouseInfluence={0.5}
+                  noiseAmount={0.1}
+                  distortion={0.05}
+                  className="custom-rays"
+                />
+              </div>
+              <Hero />
+              <ScrollToRead />
+            </div>
+            <div className="hidden z-1000 md:flex flex-1 self-start h-screen">
+              <Lanyard />
+            </div>
+          </div>
+
+          {/* About Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
           >
-            <About />
-          </SpotlightCard>
-        </motion.div>
+            <SpotlightCard
+              className="custom-spotlight-card"
+              spotlightColor="rgba(0, 229, 255, 0.2)"
+            >
+              <About />
+            </SpotlightCard>
+          </motion.div>
 
-        {/* Services Section */}
-        <Services />
+          {/* Services Section */}
+          <Services />
 
-        {/* Skills Section */}
-        <Skills />
+          {/* Skills Section */}
+          <Skills />
 
-        {/* Process Section */}
-        <Process />
+          {/* Process Section */}
+          <Process />
 
-        {/* Timeline Section với Orb riêng */}
-        <div className="relative w-full min-h-screen overflow-hidden">
-          <div className="absolute inset-0 -z-10">
-            <Orb
-              hoverIntensity={0.1}
-              rotateOnHover={false}
-              hue={0}
-              forceHoverState={false}
-            />
+          {/* Timeline Section với Orb riêng */}
+          <div className="relative w-full min-h-screen overflow-hidden">
+            <div className="-z-10 absolute inset-0">
+              <Orb
+                hoverIntensity={0.1}
+                rotateOnHover={false}
+                hue={0}
+                forceHoverState={false}
+              />
+            </div>
+            <Timeline />
           </div>
-          <Timeline />
-        </div>
 
-        {/* Enhanced Project Showcase */}
-        <ProjectShowcase />
+          {/* Enhanced Project Showcase */}
+          <ProjectShowcase />
 
-        {/* Contact Section */}
-        <div className="mx-auto py-20 w-full h-screen">
-          <Contact />
-        </div>
-      </main>
+          {/* Contact Section */}
+          <div className="mx-auto py-20 w-full h-screen">
+            <Contact />
+          </div>
+        </main>
 
-      {/* Footer */}
+        {/* Footer */}
+      </div>
       <Footer />
-    </div>
+    </>
   );
 }
